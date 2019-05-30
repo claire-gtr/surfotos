@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <% @shots.each do |shot| %>
+      <div class="col">
+        <%= shot.created_at %>
+        <%= cl_image_tag shot.photo, :width => 50, :height => 50, :crop => :fill %>
+        <p>Photogaphe :</p>
+        <%= shot.user.email %>
+        <%= link_to "Voir le shot", shot_path(shot) %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Je rajoute un shot", new_shot_path %>
+</div>

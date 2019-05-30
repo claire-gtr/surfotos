@@ -1,0 +1,6 @@
+<div class="container">
+  <p>Mon profil</p>
+  <%= current_user.email %>
+    <%= link_to "Modifier mon profil", edit_user_registration_path, class:"btn btn-default" %>
+    <%= link_to "Retour à tous les shots", root_path, class:"btn btn-back-concert" %>
+   </div>
