@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= cl_image_tag @shot.photo, :width => 100, :height => 100, :crop => :fill %>
+      <%= @shot.shot_on %>
+      <p>Photogaphe :</p>
+      <%= @shot.user.email %>
+    </div>
+  </div>
+
+
+  <%= form_tag orders_path do %>
+    <%= hidden_field_tag 'shot_id', @shot.id %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+
+  <div class="row">
+    <div class="col">
+      <%= link_to "Retour à l'accueil", root_path %>
+    </div>
+  </div>
+</div>
